@@ -7,7 +7,7 @@
 from spack import *
 import os
 
-class MchTracking(CMakePackage):
+class Mchtracking(CMakePackage):
     """Lite version of Alice MCH Tracking library and its Python bindings."""
 
     homepage = "https://www.example.com"
