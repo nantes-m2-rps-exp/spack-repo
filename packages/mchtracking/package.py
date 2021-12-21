@@ -8,34 +8,41 @@ from spack import *
 import os
 
 class Mchtracking(CMakePackage):
-    """Lite version of Alice MCH Tracking library and its Python bindings."""
+    """Lite version of Alice MCH Tracking library."""
 
-    homepage = "https://www.example.com"
+    homepage = "https://github.com/nantes-m2-rps-exp/mchtracking.git"
     git      = "https://github.com/nantes-m2-rps-exp/mchtracking.git"
-    url      = "https://github.com/nantes-m2-rps-exp/mchtracking/archive/refs/tags/v0.0.1.tar.gz"
+    url      = "https://github.com/nantes-m2-rps-exp/mchtracking/archive/refs/tags/0.1.0.tar.gz"
     
-    extends('python')
+    variant('python',default=True,description='build python bindings')
+
     generator = "Ninja"
 
-    version('dev',branch='dev')
-    version('0.0.1', sha256='0e9fb4f778417a62170888d558426107f30c64d64634e3799e38f37278c5998d')
+    version('master',branch='master')
+    version('0.1.0', sha256='b2e3dc1657074efe5e9d24cbfd70ac3b471809a9e07d8347601283511ea76dc2')
 
     depends_on('boost')
     depends_on('fairlogger')
     depends_on('fmt')
-    depends_on('ninja',type='build')
-    depends_on('py-pybind11',type='build')
-    depends_on('py-pytest',type='build')
     depends_on('root')
+
+    depends_on('ninja',type='build')
+
+    with when('+python'):
+        extends('python')
+        depends_on('py-pybind11',type='build')
+        depends_on('py-pytest',type='build')
 
     def cmake_args(self):
         args = []
         args.append(self.define("CMAKE_EXPORT_COMPILE_COMMANDS",True))
+        args.append(self.define_from_variant("BUILD_PYTHON_BINDINGS","python"))
         return args
 
     def setup_build_environment(self,env):
         env.set('O2_ROOT',os.path.join(self.build_directory,'stage'))
-        env.prepend_path('PYTHONPATH',os.path.join(self.build_directory,'stage/lib'))
+        if '+python' in self.spec:
+            env.prepend_path('PYTHONPATH',os.path.join(self.build_directory,'stage/lib'))
 
     def setup_run_environment(self,env):
         env.set('O2_ROOT',self.prefix)
