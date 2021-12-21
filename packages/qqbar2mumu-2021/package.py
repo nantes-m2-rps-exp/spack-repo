@@ -14,6 +14,7 @@ class Qqbar2mumu2021(BundlePackage):
     version('1.0.0')
 
     depends_on("mchtracking")
+    depends_on("py-mchgeo")
     depends_on("py-numpy")
     depends_on("py-pandas")
     depends_on("py-jupyterlab")
