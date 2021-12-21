@@ -11,17 +11,20 @@ class Qqbar2mumu2021(BundlePackage):
 
     homepage = "https://github.com/nantes-m2-rps-exp/qqbar2mumu-2021"
 
-    version('1.0.0')
+    version('1.1.0')
 
     depends_on("mchtracking")
+    depends_on("py-awkward")
+    depends_on("py-hist")
+    depends_on("py-jupyterlab")
+    depends_on("py-matplotlib")
+    depends_on("py-mchgeo")
     depends_on("py-mchgeo")
     depends_on("py-numpy")
     depends_on("py-pandas")
-    depends_on("py-jupyterlab")
-    depends_on("py-vector")
-    depends_on("py-hist")
-    depends_on("py-uproot")
-    depends_on("py-awkward")
-    depends_on("py-matplotlib")
     depends_on("py-plotly")
+    depends_on("py-uproot")
+    depends_on("py-vector")
+    depends_on('py-scipy')
+    depends_on('py-shapely')
 
