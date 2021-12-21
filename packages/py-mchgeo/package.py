@@ -10,12 +10,12 @@ class PyMchgeo(PythonPackage):
 
     homepage = "https://github.com/nantes-m2-rps-exp/mchgeo.git"
     git      = "https://github.com/nantes-m2-rps-exp/mchgeo.git"
-    url = "https://github.com/nantes-m2-rps-exp/mchgeo/archive/refs/tags/0.1.2.tar.gz" 
+    url = "https://github.com/nantes-m2-rps-exp/mchgeo/archive/refs/tags/0.1.3.tar.gz" 
 
     maintainers = ['aphecetche']
 
     version('master')
-    version('0.1.2', sha256='4162f7d4360e6df559f844084861b0d81d336ca9aed6858e0a6af2d62778f6e5')
+    version('0.1.3', sha256='094235c4d4e08e9849c056967cfcaa348ff74a1595845c3b61bace9ec5595399')
 
     depends_on('py-setuptools@42:',type='build')
     depends_on('py-importlib-resources',type='build')
