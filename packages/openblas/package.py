@@ -149,7 +149,7 @@ class Openblas(MakefilePackage):
         return self.spec.version >= Version('0.3.0')
 
     def edit(self, spec, prefix):
-        env['MACOSX_DEPLOYMENT_TARGET']='11.0'
+        env['MACOSX_DEPLOYMENT_TARGET']='10.6'
 
     @run_before('edit')
     def check_compilers(self):
