@@ -15,10 +15,9 @@ class Qqbar2mumu2021(BundlePackage):
 
     depends_on("mchtracking")
     depends_on("py-awkward")
-    depends_on("py-hist")
+    depends_on("py-hist+plot")
     depends_on("py-jupyterlab")
     depends_on("py-matplotlib")
-    depends_on("py-mchgeo")
     depends_on("py-mchgeo")
     depends_on("py-numpy")
     depends_on("py-pandas")
