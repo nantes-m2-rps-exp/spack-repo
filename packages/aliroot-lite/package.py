@@ -10,9 +10,10 @@ class AlirootLite(CMakePackage):
 
     homepage = "https://www.example.com"
     git      = "https://github.com/nantes-m2-rps-exp/aliroot-lite.git"
-    url      = "https://github.com/nantes-m2-rps-exp/aliroot-lite/archive/refs/heads/master.tar.gz"
+    url      = "https://github.com/nantes-m2-rps-exp/aliroot-lite/archive/refs/tags/1.1.0.tar.gz"
 
-    version("master")
+    version("master",branch="master")
+    version('1.1.0', sha256='e1255ccee8db50b9450d38dc48188cf76e07ce6c06195dbd79429e505056b227')
 
     depends_on('vmc@1-1-p1:')
     depends_on('alice-grid-utils')
