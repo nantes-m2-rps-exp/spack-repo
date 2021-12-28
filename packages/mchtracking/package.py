@@ -19,9 +19,10 @@ class Mchtracking(CMakePackage):
     generator = "Ninja"
 
     version('master',branch='master')
+    version('0.1.1', sha256='ff3862550460a3d16f546ff0de13e11fd4ce2c7e095b2987633d362afac5ee61')
     version('0.1.0', sha256='b2e3dc1657074efe5e9d24cbfd70ac3b471809a9e07d8347601283511ea76dc2')
 
-    depends_on('boost')
+    depends_on('boost',when='@:0.1.0')
     depends_on('fairlogger')
     depends_on('fmt')
     depends_on('root')
