@@ -19,6 +19,8 @@ class Mchmapping(CMakePackage):
     generator = "Ninja"
 
     version('master',branch='master')
+    version('0.1.0', sha256='c117389dd776bcb31953217cc25c1c4f1c358192c172e8c73fa9ae84e918a129')
+
 
     depends_on('boost')
     depends_on('fmt')
