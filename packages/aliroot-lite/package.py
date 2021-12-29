@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 from spack import *
+import os
 
 class AlirootLite(CMakePackage):
     """A Lite version of AliRoot"""
@@ -18,3 +19,8 @@ class AlirootLite(CMakePackage):
     depends_on('vmc@1-1-p1:')
     depends_on('alice-grid-utils')
     depends_on('jalien-root')
+
+    def setup_run_environment(self,env):
+      env.set('ALICE_ROOT',self.prefix)
+      env.append_path('ROOT_INCLUDE_PATH',os.path.join(self.prefix,'include'))
+
