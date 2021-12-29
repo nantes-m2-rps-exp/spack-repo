@@ -15,7 +15,7 @@ class Mumuscalers2csv(CMakePackage):
     version("master",branch="master")
     version('1.0.0', sha256='cf3e862661679914b29bb8a35f29de5cee0aa21dc33a32625c95c672b837b11a')
 
-    depends_on('aliphysics-lite@1.1.1:')
+    depends_on('aliphysics-lite@1.1.2:')
     depends_on('boost')
     depends_on('fmt')
     depends_on('root')
