@@ -3,7 +3,6 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-
 from spack import *
 
 class Qqbar2mumu2021(BundlePackage):
@@ -11,7 +10,7 @@ class Qqbar2mumu2021(BundlePackage):
 
     homepage = "https://github.com/nantes-m2-rps-exp/qqbar2mumu-2021"
 
-    version('1.1.0')
+    version('1.2.0')
 
     depends_on("mchtracking")
     depends_on("py-awkward")
@@ -24,6 +23,6 @@ class Qqbar2mumu2021(BundlePackage):
     depends_on("py-plotly")
     depends_on("py-uproot")
     depends_on("py-vector")
+    depends_on('py-particle')
     depends_on('py-scipy')
     depends_on('py-shapely')
-
