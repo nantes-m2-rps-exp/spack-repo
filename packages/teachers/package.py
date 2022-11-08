@@ -7,12 +7,12 @@
 from spack import *
 
 class Teachers(BundlePackage):
-    """Bundle for QQBar2MuMu project - 2021 edition - teachers' version"""
+    """Bundle for QQBar2MuMu project - 2022 edition - teachers' version"""
 
     homepage = "https://github.com/nantes-m2-rps-exp/"
 
     version('1.0.0')
 
-    depends_on('qqbar2mumu-2021')
+    depends_on('qqbar2mumu-2022')
     depends_on('mumuscalers2csv') # brings aliroot-lite and aliphysics-lite
 
