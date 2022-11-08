@@ -5,7 +5,7 @@
 
 from spack import *
 
-class Qqbar2mumu2021(BundlePackage):
+class Qqbar2mumu2022(BundlePackage):
     """Bundle for QQBar2MuMu project - 2022 edition."""
 
     homepage = "https://github.com/nantes-m2-rps-exp/qqbar2mumu-2022"
