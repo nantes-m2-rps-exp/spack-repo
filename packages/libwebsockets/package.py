@@ -51,3 +51,7 @@ class Libwebsockets(CMakePackage):
                         r'#define MSG_NOSIGNAL SO_NOSIGPIPE' + '\n' +
                         r'#endif'+'\n',
                         'lib/core/private.h')
+    def cmake_args(self):
+        args = []
+        args.append(self.define("LWS_WITHOUT_TEST_SERVER",True))
+        return args
